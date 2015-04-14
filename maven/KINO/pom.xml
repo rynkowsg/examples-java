@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pl.ekaczynski.kino</groupId>
+    <artifactId>kino-parent</artifactId>
+	<packaging>pom</packaging>
+    <version>1.0.0</version>
+    <name>kino-parent</name>
+
+    <properties>
+        <kino.version>1.0.0</kino.version>
+        <commons-lang.version>2.2</commons-lang.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>all</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>kino-entities</module>
+                <module>kino-dao</module>
+                <module>kino-services</module>
+                <module>kino-client</module>
+                <module>kino-worker</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>client</id>
+            <modules>
+                <module>kino-entities</module>
+                <module>kino-dao</module>
+                <module>kino-services</module>
+                <module>kino-client</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>worker</id>
+            <modules>
+                <module>kino-entities</module>
+                <module>kino-dao</module>
+                <module>kino-services</module>
+                <module>kino-worker</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>
